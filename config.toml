@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "http://seaviewpta.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Seaview PTA"
 theme = "forty"
