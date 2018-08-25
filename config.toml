@@ -81,7 +81,7 @@ disqusShortname = ""
   [params.banner]
     # To change the background image on the homepage banner, replace 'banner.jpg' in
     # the 'static/img' folder.
-    title = "Welcome to Seaview Heights PTA"
+    title = "Welcome to Seaview PTA"
     subtitle = "The Parent Teacher Association for Seaview Elementary, Edmonds, WA"
     buttonText = "Get Started"
 
@@ -186,10 +186,10 @@ disqusShortname = ""
     title = "Email"
     email = "seaviewpta@gmail.com"
 
-#    [[params.contact.phone]]
-#    title = "Phone"
-#    phone = "(000) 000-0000 x1234"
-#
+    [[params.contact.phone]]
+    title = "Phone"
+    phone = "(302) 404-4327"
+
     [[params.contact.address]]
     title = "Address"
     street = "8426 188th St SW"
