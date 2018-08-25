@@ -95,7 +95,7 @@ disqusShortname = ""
       title = "Contacts"
       subtitle = "PTA Board Contact Information"
       image = "pic01.jpg"
-      url = "blogs/aliquam"
+      url = "blogs/seaview-pta-contact-information"
 
     [[params.tiles.showcase]]
       title = "Registration"
