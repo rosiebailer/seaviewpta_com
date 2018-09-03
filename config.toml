@@ -95,49 +95,49 @@ disqusShortname = ""
       title = "Contacts"
       subtitle = "PTA Board Contact Information"
       image = "pic01.jpg"
-      url = "blogs/seaview-pta-contact-information"
+      url = "blogs/contact"
 
     [[params.tiles.showcase]]
       title = "Registration"
       subtitle = "Become a PTA member online"
       image = "pic02.jpg"
-      url = "blogs/tempus"
+      url = "blogs/registration"
 
     [[params.tiles.showcase]]
       title = "Donations"
       subtitle = "Support our School"
       image = "pic03.jpg"
-      url = "blogs/magna"
+      url = "blogs/donations"
 
     [[params.tiles.showcase]]
       title = "Calendar"
       subtitle = "Check out the PTA calendar"
       image = "pic05.jpg"
-      url = "blogs/ipsum"
+      url = "blogs/calendar"
 
     [[params.tiles.showcase]]
       title = "Volunteer"
       subtitle = "Check out our volunteer opportunities"
       image = "pic05.jpg"
-      url = "blogs/ipsum"
+      url = "blogs/volunteer"
 
     [[params.tiles.showcase]]
       title = "Clubs"
       subtitle = "Check out our after school clubs and activities"
       image = "pic06.jpg"
-      url = "blogs/ipsum"
+      url = "blogs/clubs"
 
     [[params.tiles.showcase]]
       title = "Meetings"
       subtitle = "Minutes and Agenda"
       image = "pic07.jpg"
-      url = "blogs/ipsum"
+      url = "blogs/meetings"
 
     [[params.tiles.showcase]]
       title = "Budget"
       subtitle = "The PTA Budget"
       image = "pic07.jpg"
-      url = "blogs/ipsum"
+      url = "blogs/budget"
     # You can make more showcases by copy and pasting the code above
 
   [params.blog]

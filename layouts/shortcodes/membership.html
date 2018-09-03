@@ -1,0 +1,297 @@
+{{ partial "js.html" }}
+{{ "<!-- Membership -->" | safeHTML}}
+<section id="payments">
+    <ul class="actions">
+        <li style="vertical-align: top">
+            <h3>Two Person Membership</h3>
+            <div>$15.00 + $0.75 transaction fee</div>
+            <div id="paypal-button1"></div>
+        </li>
+        <li style="vertical-align: top">
+            <h3>Single Person Membership</h3>
+            <div>$10.00 + $0.60 transaction fee</div>
+            <div id="paypal-button2"></div>
+        </li>
+        <li style="vertical-align: top">
+            <h3>Pay By Cash or Check</h3>
+            <div>No Transaction Fee</div>
+            <input id="cash-button" type="button" data-icon="check" data-iconpos="left" value="Show Form"/>
+        </li>
+    </ul>
+</section>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+$("#cash-button").click(
+    function() {
+        $("#membership-form").show();
+        $("#payments").hide();
+        $("#input-payment-id").val("CASH");
+    }
+);
+paypal.Button.render({
+  env: 'sandbox',
+  style: {
+    label: "pay",
+    tagline: "false",
+    fundingicons: "true",
+    size: "responsive"
+  },
+  client: {
+    sandbox: 'AazG35s8kKVeSfj5QDZ2jZgFxY1oxncYQtDSUAAomgVXa3RGR528oSJs7IJwEciW-RjcsUVzNOEW8afz',
+    production: 'AWuvRk9PfipkJQifM2CFBvO8EfQiA97PeqZQRENMBuq_74_0iKxOSQbO9wnnIdeojTj7XnCN04uCpYDA'
+  },
+  payment: function (data, actions) {
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total: '15.75',
+          currency: 'USD'
+        },
+        description: "Two Person Annual Membership",
+        custom: "dual"
+      }]
+    });
+  },
+  commit: true,
+  onAuthorize: function (data, actions) {
+    return actions.payment.execute()
+      .then(function (paymentDetails) {
+          $("#membership-form").show();
+          $("#payments").hide();
+          $("#input-payment-id").val(data.paymentID);
+          $("#input-secondary-payment-id").val(data.paymentID);
+          $("#input-email").val(paymentDetails.payer.payer_info.email);
+          $("#input-firstname").val(paymentDetails.payer.payer_info.first_name);
+          $("#input-lastname").val(paymentDetails.payer.payer_info.last_name);
+      });
+  }
+}, '#paypal-button1');
+paypal.Button.render({
+  env: 'sandbox',
+  style: {
+    label: "pay",
+    tagline: "false",
+    fundingicons: "true",
+    size: "responsive"
+  },
+  client: {
+    sandbox: 'AazG35s8kKVeSfj5QDZ2jZgFxY1oxncYQtDSUAAomgVXa3RGR528oSJs7IJwEciW-RjcsUVzNOEW8afz',
+    production: 'AWuvRk9PfipkJQifM2CFBvO8EfQiA97PeqZQRENMBuq_74_0iKxOSQbO9wnnIdeojTj7XnCN04uCpYDA'
+  },
+  payment: function (data, actions) {
+    return actions.payment.create({
+      transactions: [{
+        amount: {
+          total: '10.60',
+          currency: 'USD'
+        },
+        description: "Single Person Annual Membership",
+        custom: "single"
+      }]
+    });
+  },
+  commit: true,
+  onAuthorize: function (data, actions) {
+    return actions.payment.execute()
+      .then(function (paymentDetails) {
+          $("#membership-form").show();
+          $("#membership-dual").hide();
+          $("#payments").hide();
+          $("#input-payment-id").val(data.paymentID);
+          $("#input-email").val(paymentDetails.payer.payer_info.email);
+          $("#input-firstname").val(paymentDetails.payer.payer_info.first_name);
+          $("#input-lastname").val(paymentDetails.payer.payer_info.last_name);
+      });
+  }
+}, '#paypal-button2');
+</script>
+
+<section id="membership-form" style="display:none">
+    <div class="inner">
+        <section>
+            <form id="input-form" action="" method="post">
+                <section id="membership-single">
+                    <h3>Primary Member</h3>
+                    <div class="field">
+                        <label for="input-email">Email</label>
+                        <input type="email" id="input-email" name="email" value />
+                        <input type="hidden" id="input-payment-id" name="paymentID" value />
+                    </div>
+                    <div class="field half first">
+                        <label for="input-firstname">First Name</label>
+                        <input type="text" id="input-firstname" name="firstname" value />
+                    </div>
+                    <div class="field half">
+                        <label for="input-lastname">Last Name</label>
+                        <input type="text" id="input-lastname" name="lastname" value />
+                    </div>
+                    <div class="field">
+                        <label for="input-address">Address</label>
+                        <input type="text" id="input-address" name="address" value />
+                    </div>
+                    <div class="field half first">
+                        <label for="input-firstname">City</label>
+                        <input type="text" id="input-city" name="city" value="Edmonds" />
+                    </div>
+                    <div class="field half">
+                        <label for="input-state">State</label>
+                        <input type="text" id="input-state" name="state" maxlength=2 value="WA" />
+                    </div>
+                    <div class="field">
+                        <label for="input-zip">Zip</label>
+                        <input type="text" id="input-zip" name="zip" value="98026" />
+                    </div>
+                    <div class="field">
+                        <label for="input-phone">Phone</label>
+                        <input type="tel" id="input-phone" name="phone" value />
+                    </div>
+                    <div class="field">
+                        <label for="input-relation">Relation</label>
+                        <select id="input-relation" name="relation" value="1">
+                            <option value="1">-- No Selection --</option>
+                            <option value="2">Mother</option>
+                            <option value="3">Father</option>
+                            <option value="4">Step-Mother</option>
+                            <option value="5">Step-Father</option>
+                            <option value="6">Grandmother</option>
+                            <option value="7">Grandfather</option>
+                            <option value="8">Guardian</option>
+                            <option value="13">Other</option>
+                            <option value>-- Non-Parent --</option>
+                            <option value="9">Teacher</option>
+                            <option value="10">Support Staff</option>
+                            <option value="11">Administrator</option>
+                            <option value="12">Community Partner</option>
+                            <option value="13">Other</option>
+                            <option value="15">Student</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="input-secondary-email">Second Email</label>
+                        <input type="email" id="input-secondary-email" name="secondary-email" value />
+                    </div>
+                </section>
+                <section id="membership-dual">
+                    <h3>Secondary Member</h3>
+                    <div class="field">
+                        <label for="input-second-email">Email</label>
+                        <input type="email" id="input-second-email" name="second-email" value />
+                        <input type="hidden" id="input-second-payment-id" name="second-paymentID" value />
+                    </div>
+                    <div class="field half first">
+                        <label for="input-second-firstname">First Name</label>
+                        <input type="text" id="input-second-firstname" name="second-firstname" value />
+                    </div>
+                    <div class="field half">
+                        <label for="input-second-lastname">Last Name</label>
+                        <input type="text" id="input-second-lastname" name="second-lastname" value />
+                    </div>
+                    <div class="field">
+                        <label for="input-second-address">Address</label>
+                        <input type="text" id="input-second-address" name="second-address" value />
+                    </div>
+                    <div class="field half first">
+                        <label for="input-second-firstname">City</label>
+                        <input type="text" id="input-second-city" name="second-city" value="Edmonds" />
+                    </div>
+                    <div class="field half">
+                        <label for="input-second-state">State</label>
+                        <input type="text" id="input-second-state" name="second-state" maxlength=2 value="WA" />
+                    </div>
+                    <div class="field">
+                        <label for="input-second-zip">Zip</label>
+                        <input type="text" id="input-second-zip" name="second-zip" value="98026" />
+                    </div>
+                    <div class="field">
+                        <label for="input-second-phone">Phone</label>
+                        <input type="tel" id="input-second-phone" name="second-phone" value />
+                    </div>
+                    <div class="field">
+                        <label for="input-second-relation">Relation</label>
+                        <select id="input-second-relation" name="second-relation" value="1">
+                            <option value="1">-- No Selection --</option>
+                            <option value="2">Mother</option>
+                            <option value="3">Father</option>
+                            <option value="4">Step-Mother</option>
+                            <option value="5">Step-Father</option>
+                            <option value="6">Grandmother</option>
+                            <option value="7">Grandfather</option>
+                            <option value="8">Guardian</option>
+                            <option value="13">Other</option>
+                            <option value>-- Non-Parent --</option>
+                            <option value="9">Teacher</option>
+                            <option value="10">Support Staff</option>
+                            <option value="11">Administrator</option>
+                            <option value="12">Community Partner</option>
+                            <option value="13">Other</option>
+                            <option value="15">Student</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="input-second-secondary-email">Second Email</label>
+                        <input type="email" id="input-second-secondary-email" name="second-second-email" value />
+                    </div>
+                </section>
+                <section id="actions">
+                    <div class="actions">
+                        <li><button id="form-submit" type="submit" onclick="javascript: return submitForms()">SUBMIT</button></li>
+                        <li><button id="form-reset" type="reset">RESET</button></li>
+                    </div>
+                </section>
+            </form>
+        </section>
+    </div>
+</section>
+
+<iframe src="#" id="no-target1" name="no-target1" style="visibility:hidden"></iframe>
+<iframe src="#" id="no-target2" name="no-target2" style="visibility:hidden"></iframe>
+
+<script>
+function submitForms() {
+    var baseURL = 'https://docs.google.com/forms/u/2/d/e/1FAIpQLSeuYNGHG0sGJ9KhQ7Uz8ClZtDA3yV8L01EfkZqLVZUvSjW7lA/formResponse';
+    var formParams = {
+        'emailAddress': $('#input-email').val(),
+        'entry.entry.363727626': 'P',
+        'entry.261327476': $('#input-payment-id').val(),
+        'entry.1797553642': $('#input-lastname').val(),
+        'entry.930647823': $('#input-firstname').val(),
+        'entry.1555241055': $('#input-address').val(),
+        'entry.189272550': $('#input-city').val(),
+        'entry.88556882': $('#input-state').val(),
+        'entry.2087531849': $('#input-zip').val(),
+        'entry.127883042': $('#input-phone').val(),
+        'entry.1499890240': $('#input-relation').val(),
+        'entry.1470291790': $('#input-secondary-email').val(),
+        'submit': 'Submit' };
+    var submitURL = baseURL + '?' + $.param(formParams);
+    console.log(submitURL);
+    $('#input-form').attr('target', 'no-target1');
+    $('#input-form').attr('action', submitURL);
+    $('#input-form').submit()
+    if($('#membership-dual').is(":visible")) {
+        if($('#input-second-email').val() != '') {
+            var formParams = {
+                'emailAddress': $('#input-second-email').val(),
+                'entry.entry.363727626': 'S',
+                'entry.261327476': $('#input-payment-id').val(),
+                'entry.1797553642': $('#input-second-lastname').val(),
+                'entry.930647823': $('#input-second-firstname').val(),
+                'entry.1555241055': $('#input-second-address').val(),
+                'entry.189272550': $('#input-second-city').val(),
+                'entry.88556882': $('#input-second-state').val(),
+                'entry.2087531849': $('#input-second-zip').val(),
+                'entry.127883042': $('#input-second-phone').val(),
+                'entry.1499890240': $('#input-second-relation').val(),
+                'entry.1470291790': $('#input-second-secondary-email').val(),
+                'submit': 'Submit' };
+            var submitURL = baseURL + '?' + $.param(formParams);
+            console.log(submitURL);
+            $('#input-form').attr('target', 'no-target2');
+            $('#input-form').attr('action', submitURL);
+            $('#membership-form').submit()
+        }
+    }
+    $('#membership-form').html('<h2>Thank You. Your membership information has been submitted.</h2>');
+    return true;
+};
+</script>
