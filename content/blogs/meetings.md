@@ -15,6 +15,8 @@ The agenda for the next meeting. See the link at the bottom of the page to edit 
 - Introductions
 - Approval of minutes
 - Budget
+- Teacher Update
+- Principal Report
 - Status of Fun Run
 - Status of Outdoor Classroom
 
