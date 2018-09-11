@@ -6,6 +6,7 @@ draft: false
 
 {{< calendar >}}
 
-[Click here](https://calendar.google.com/calendar/ical/seaviewpta%40gmail.com/public/basic.ics) to add this calendar to your mobile phone.
+To add the following calendars to your Google Calendar, Android, or iPhone follow [these instructions](https://support.google.com/calendar/answer/37100)
 
-You can also add the Edmonds School District Key Dates calendar by clicking [here](https://calendar.google.com/calendar/ical/cqtoneci9qf3m8iugaksen7jss%40group.calendar.google.com/public/basic.ics).
+- [Seaview PTA ical link](https://calendar.google.com/calendar/ical/seaviewpta%40gmail.com/public/basic.ics)
+- [Edmonds School District Key Dates ical link](https://calendar.google.com/calendar/ical/cqtoneci9qf3m8iugaksen7jss%40group.calendar.google.com/public/basic.ics).
