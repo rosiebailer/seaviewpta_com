@@ -12,13 +12,15 @@ The next meeting is on September 11, 2018
 
 The agenda for the next meeting. See the link at the bottom of the page to edit this agenda.
 
-- Introductions
 - Approval of minutes
-- Budget
-- Teacher Update
-- Principal Report
-- Status of Fun Run
-- Status of Outdoor Classroom
+- Budget Revisit
+- Teacher's Update
+- Principal's Report
+- How to volunteer
+- What are all the PTA events?
+- Fun Run Update
+- Fall Dance Party
+- PTA Membership Drawing Announcement
 
 ## Minutes
 
