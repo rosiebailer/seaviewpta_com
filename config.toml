@@ -86,12 +86,6 @@ disqusShortname = ""
       url = "blogs/contact"
 
     [[params.tiles.showcase]]
-      title = "Registration"
-      subtitle = "Become a PTA member online"
-      image = "pic02.jpg"
-      url = "blogs/registration"
-
-    [[params.tiles.showcase]]
       title = "Donations"
       subtitle = "Support our School"
       image = "pic03.jpg"
@@ -102,6 +96,12 @@ disqusShortname = ""
       subtitle = "Check out the PTA calendar"
       image = "pic05.jpg"
       url = "blogs/calendar"
+
+    [[params.tiles.showcase]]
+      title = "Events"
+      subtitle = "Check out PTA events"
+      image = "pic07.jpg"
+      url = "blogs/events"
 
     [[params.tiles.showcase]]
       title = "Volunteer"
@@ -120,6 +120,12 @@ disqusShortname = ""
       subtitle = "Minutes and Agenda"
       image = "pic07.jpg"
       url = "blogs/meetings"
+
+    [[params.tiles.showcase]]
+      title = "Registration"
+      subtitle = "Become a PTA member online"
+      image = "pic02.jpg"
+      url = "blogs/registration"
 
     [[params.tiles.showcase]]
       title = "Budget"
