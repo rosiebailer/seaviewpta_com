@@ -6,7 +6,7 @@ draft: false
 
 ## Next Meeting
 
-The next meeting is on September 11, 2018
+The next meeting is on November 13, 2018
 
 ## Agenda
 
@@ -16,11 +16,6 @@ The agenda for the next meeting. See the link at the bottom of the page to edit 
 - Budget Revisit
 - Teacher's Update
 - Principal's Report
-- How to volunteer
-- What are all the PTA events?
-- Fun Run Update
-- Fall Dance Party
-- PTA Membership Drawing Announcement
 
 ## Minutes
 [9/11/2018](#seaview-pta-meeting-9-11-18)
