@@ -16,20 +16,8 @@ draft: false
 
 ## Co-Vice-President: Will Wisner
 
-{{< email "strongwill10@yahoo.com" >}}
-{{< phone "+1.425.359.1367" >}}
-
 ## Co-Vice-President: Sarah McManus
-
-{{< email "mcaarvik@gmail.com" >}}
-{{< phone "+1.425.478.8844" >}}
 
 ## Treasurer: Stephanie Keller
 
-{{< email "joshaniek313@gmail.com" >}}
-{{< phone "+1.253.229.5513" >}}
-
 ## Secretary: Liz Weigel
-
-{{< email "lizjnunez@gmail.com" >}}
-{{< phone "+1.206.356.3553" >}}
