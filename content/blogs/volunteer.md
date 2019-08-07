@@ -6,7 +6,7 @@ draft: false
 
 ## Committees
 
-### Fun Run
+### Fun Run!
 
 To volunteer, email [SeaviewPTA@gmail.com](mailto:seaviewpta@gmail.com?subject=volunteering)
 
